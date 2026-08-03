@@ -12,7 +12,7 @@ use Bitrix\Main\ORM\Fields\Validators\LengthValidator;
 
 class BookTable extends DataManager
 {
-    public const BOOK_MINIMAL_DESCRIPTION_LENGTH = 30;
+    public const BOOK_MINIMAL_DESCRIPTION_LENGTH = 5;
 
     public static function getTableName(): string
     {
