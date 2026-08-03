@@ -20,6 +20,7 @@ class Event
         }
 
         $dataClass = $event->getEntity()->getDataClass();
+        $dataClass::cleanCache();
 
         $existedElement = $dataClass::getList([
             'select' => ['ID'],
