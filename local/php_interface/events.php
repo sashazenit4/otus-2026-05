@@ -1,6 +1,7 @@
 <?php
 
 use Bitrix\Main\EventManager;
+use Otus\Event\EventHandlerFactory;
 
 $eventManager = EventManager::getInstance();
 
@@ -18,3 +19,9 @@ $eventManager->addEventHandler('', 'PantoneColorsOnBeforeAdd', [
     '\Otus\Hlblock\Event',
     'onBeforeElementAdd'
 ]);
+
+$eventManager->addEventHandler('iblock', 'OnBeforeIblockElementAdd', function (array &$fields) {
+    $handler = EventHandlerFactory::create($fields['IBLOCK_ID']);
+    $fields = $handler?->onBeforeAdd($fields);
+    return $fields;
+});

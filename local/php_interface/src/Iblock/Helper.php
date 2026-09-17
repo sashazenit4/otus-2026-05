@@ -19,4 +19,17 @@ class Helper
             ],
         ])->fetch()['ID'];
     }
+
+    public static function getIblockCodeById(?int $id): ?string
+    {
+        if (!Loader::includeModule('iblock')) {
+            return null;
+        }
+
+        return IblockTable::getList([
+            'filter' => [
+                '=ID' => $id,
+            ],
+        ])->fetch()['CODE'];
+    }
 }
