@@ -1,0 +1,9 @@
+GET /api/v1/products?filter=32
+Content-Type: application/json
+Authorization: Bearer sdka;djsakljhdkjh34j2
+
+{
+  "name": "Смартфон",
+  "price": 50000,
+  "inStock": true
+}
